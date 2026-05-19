@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,18 @@
 </head>
 <body>
 
-<div class="header">
-  <h1>⚙️ Automata Visualizer</h1>
-  <p class="subtitle">// Generate transition diagrams from natural language</p>
-</div>
+<nav class="navbar">
+  <div class="nav-brand">⚙️ Automata Visualizer</div>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
+</nav>
 
 <div class="container">
+
+  <div class="hero">
+    <h1>Generate Automata Diagrams</h1>
+    <p>Describe any automaton in plain English and get a transition diagram instantly</p>
+  </div>
+
   <div class="card">
     <div class="card-title">SELECT TYPE</div>
     <div class="type-grid">
@@ -34,25 +40,27 @@
     <div class="card-title">DESCRIBE YOUR AUTOMATON</div>
     <textarea id="description" placeholder="e.g. DFA that accepts strings over {a,b} not containing three consecutive b's"></textarea>
     <button id="generateBtn" onclick="generate()">
-      <span id="btnText">Generate Diagram</span>
-      <span id="btnLoader" style="display:none">Generating...</span>
+      <span id="btnText">⚡ Generate Diagram</span>
+      <span id="btnLoader" style="display:none">⏳ Generating...</span>
     </button>
   </div>
 
   <div class="card" id="diagramCard" style="display:none">
-    <div class="card-title">TRANSITION DIAGRAM</div>
-    <div id="typeTag" class="tag"></div>
+    <div class="card-header">
+      <div class="card-title">TRANSITION DIAGRAM</div>
+      <div id="typeTag" class="tag"></div>
+    </div>
     <div id="svgContainer"></div>
     <div class="legend" id="legend"></div>
   </div>
 
   <div class="card" id="explanationCard" style="display:none">
-    <div class="card-title">EXPLANATION</div>
+    <div class="card-title">📖 EXPLANATION</div>
     <p id="explanation"></p>
   </div>
 
   <div class="card" id="testCard" style="display:none">
-    <div class="card-title">TEST A STRING</div>
+    <div class="card-title">🧪 TEST A STRING</div>
     <div class="test-row">
       <input type="text" id="testInput" placeholder="Enter string e.g. aabb"/>
       <button onclick="testString()">Test</button>
@@ -61,11 +69,16 @@
   </div>
 
   <div class="card" id="transitionCard" style="display:none">
-    <div class="card-title">TRANSITION TABLE</div>
+    <div class="card-title">📊 TRANSITION TABLE</div>
     <div id="transitionTable"></div>
   </div>
+
 </div>
+
+<footer>
+  <p>Built with ❤️ by Anant · Powered by Groq AI</p>
+</footer>
 
 <script src="/static/script.js"></script>
 </body>
-        </html>
+</html>
