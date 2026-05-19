@@ -1,6 +1,6 @@
 # ⚙️ Automata Visualizer
 
-> **The world's first AI-powered automata diagram generator from natural language.**
+> **One of the most complete AI-powered automata visualizers — supporting all 9 automata types from natural language descriptions.**
 
 🔗 **Live Demo:** https://automata-visualizer.onrender.com
 
@@ -8,20 +8,24 @@
 
 ## 🚀 What Makes This Different?
 
-Every automata tool online requires you to **manually input states, transitions, and alphabets** one by one through forms and dropdowns.
+Most automata tools online require you to **manually input states, transitions, and alphabets** one by one through forms and dropdowns. Some AI tools exist but only support DFA/NFA.
 
-**Automata Visualizer does something no other tool does:**
+**Automata Visualizer combines everything in one place:**
 
 > You describe your automaton in plain English → AI understands it → Draws the complete transition diagram instantly.
 
-No other free tool combines:
-- ✅ Natural language input
-- ✅ AI-powered diagram generation
-- ✅ All automata types in one place
-- ✅ String testing
-- ✅ Transition table generation
-- ✅ Light/Dark mode
-- ✅ Mobile friendly
+| Feature | Other Tools | Automata Visualizer |
+|---------|------------|-------------------|
+| Natural language input | Partial | ✅ Full |
+| DFA / NFA | ✅ | ✅ |
+| PDA / Turing Machine | ❌ | ✅ |
+| Mealy / Moore Machine | ❌ | ✅ |
+| CFG / Regular Grammar | ❌ | ✅ |
+| String Testing | Partial | ✅ |
+| Transition Table | Partial | ✅ |
+| Mobile Friendly | ❌ | ✅ |
+| Light / Dark Mode | ❌ | ✅ |
+| Free & Open Source | Partial | ✅ |
 
 ---
 
@@ -62,7 +66,7 @@ No other free tool combines:
 ---
 
 ## 🖥️ How It Works
-
+```
 User types description
 ↓
 Flask backend receives request
