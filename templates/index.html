@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automata Visualizer</title>
+<link rel="stylesheet" href="/static/style.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+<div class="header">
+  <h1>⚙️ Automata Visualizer</h1>
+  <p class="subtitle">// Generate transition diagrams from natural language</p>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="card-title">SELECT TYPE</div>
+    <div class="type-grid">
+      <button class="type-btn active" data-type="DFA">DFA</button>
+      <button class="type-btn" data-type="NFA">NFA</button>
+      <button class="type-btn" data-type="eNFA">ε-NFA</button>
+      <button class="type-btn" data-type="PDA">PDA</button>
+      <button class="type-btn" data-type="TM">Turing Machine</button>
+      <button class="type-btn" data-type="MEALY">Mealy</button>
+      <button class="type-btn" data-type="MOORE">Moore</button>
+      <button class="type-btn" data-type="CFG">CFG</button>
+      <button class="type-btn" data-type="RG">Regular Grammar</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">DESCRIBE YOUR AUTOMATON</div>
+    <textarea id="description" placeholder="e.g. DFA that accepts strings over {a,b} not containing three consecutive b's"></textarea>
+    <button id="generateBtn" onclick="generate()">
+      <span id="btnText">Generate Diagram</span>
+      <span id="btnLoader" style="display:none">Generating...</span>
+    </button>
+  </div>
+
+  <div class="card" id="diagramCard" style="display:none">
+    <div class="card-title">TRANSITION DIAGRAM</div>
+    <div id="typeTag" class="tag"></div>
+    <div id="svgContainer"></div>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <div class="card" id="explanationCard" style="display:none">
+    <div class="card-title">EXPLANATION</div>
+    <p id="explanation"></p>
+  </div>
+
+  <div class="card" id="testCard" style="display:none">
+    <div class="card-title">TEST A STRING</div>
+    <div class="test-row">
+      <input type="text" id="testInput" placeholder="Enter string e.g. aabb"/>
+      <button onclick="testString()">Test</button>
+    </div>
+    <div id="testResult"></div>
+  </div>
+
+  <div class="card" id="transitionCard" style="display:none">
+    <div class="card-title">TRANSITION TABLE</div>
+    <div id="transitionTable"></div>
+  </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+        </html>
