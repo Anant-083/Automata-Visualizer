@@ -124,9 +124,7 @@ B.Tech CSE (AI & ML) — Brainware University
 🎯 Aspiring Full-Stack AI Developer
 
 [
-
 ![GitHub](https://img.shields.io/badge/GitHub-Anant--083-blue?style=flat&logo=github)
-
 ](https://github.com/Anant-083)
 
 ---
